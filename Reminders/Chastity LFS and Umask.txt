@@ -1,0 +1,6 @@
+According to section "2.6. Setting the $LFS Variable and the Umask" of the LFS book 13.0, I must have my environment variables set up.
+Because I am not interesting in making an actual bootable partition, I just use a regular directory in my repository as the place for my build.
+
+export LFS=/home/chastity/git/chasteos/mnt/lfs
+
+umask 022
