@@ -1,0 +1,7 @@
+https://git-scm.com/docs/gitignore
+
+undoing a git commit
+
+git reset --mixed HEAD~1
+
+more information: https://www.datacamp.com/blog/git-undo-last-commit
