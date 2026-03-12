@@ -1,3 +1,5 @@
+# Age Verification Rant
+
 As a Free Software and Open Source advocate, I am always aware of the latest technology changes. In March of 2026, I found several articles and visuals detailing laws that people were trying to pass to force operating systems to have "age verification" built into them. I should not have to tell you my opinion on this because it should be obvious.
 
 The goal of these laws is to force people to prove that they are 18 years or older to be able to use their computers. As someone who grew up with old computers running DOS, Windows 3.1, Windows 98, and Ubuntu Linux, all before I was 18, I have to say that I oppose such laws because they prevent kids from learning how to use computers at an early age.
