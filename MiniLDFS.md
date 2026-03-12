@@ -204,3 +204,38 @@ If everything is set up correctly, your Linux system will boot and
 present you with the shell provided by BusyBox. Congratulations—
 you now have a working, minimal Linux distribution!
 
+
+# QEMU usage Information
+
+The command given above for launching the disk with QEMU no longer works.
+
+sudo qemu-system-x86_64 -drive file=OS,index=0,media=disk,format=raw
+
+It starts to work but then has a kernel panic for some reason and says it can't find init.
+
+See invocation page here:
+
+https://qemu-project.gitlab.io/qemu/system/invocation.html
+
+```
+Instead of -hda, -hdb, -hdc, -hdd, you can use:
+
+qemu-system-x86_64 -drive file=file,index=0,media=disk
+qemu-system-x86_64 -drive file=file,index=1,media=disk
+qemu-system-x86_64 -drive file=file,index=2,media=disk
+qemu-system-x86_64 -drive file=file,index=3,media=disk
+```
+
+# Remake the System
+
+Assuming you backed up your syslinux.cfg file to the /distro directory, rebuilding the entire  image with a new size is easy.
+
+sudo dd if=/dev/zero of=OS bs=1M count=50
+sudo mkfs -t fat OS
+
+sudo mount OS /distro/tmp
+sudo cp /distro/vmlinuz /distro/tmp/vmlinuz
+sudo cp /distro/syslinux.cfg /distro/tmp/syslinux.cfg
+
+sudo umount /distro/tmp
+sudo syslinux OS
