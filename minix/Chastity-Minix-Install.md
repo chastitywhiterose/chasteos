@@ -79,4 +79,4 @@ pkgin update
 pkgin_sets
 ```
 
-The sets include most things I wanted. The clang compiler can be installed
+The sets include most things I wanted. The clang compiler can be installed as well as important things like the vim text editor.
