@@ -47,3 +47,27 @@ qemu-system-x86_64 -rtc base=utc -net user -net nic -m 256 -cdrom minix.iso -dri
 
 I followed the instructions given on the screen to install Minix to the hard disk from the ISO. When it asked me what size I wanted home to be, I chose 4096 megabytes because I planned to download my best git repositories for programming in Minix using C and other languages.
 
+Whenever I am done installing or using Minix, either of the following commands
+
+```
+shutdown -h now
+```
+
+or
+
+```
+poweroff
+```
+
+Will turn the emulated PC off so I can exit QEMU safely.
+
+Once Minix was installed, I just booted from the hard disk image. Notice that the command is mostly the same except the ISO image for the CD is not included this time because we don't need it.
+
+
+```
+qemu-system-x86_64 -rtc base=utc -net user -net nic -m 256 -drive file=minix.img,format=raw,index=0,media=disk
+```
+
+The next guide from the Minix 3 website has more information on installing more things onto Minix after it is installed.
+
+<https://wiki.minix3.org/doku.php?id=usersguide:postinstallation>
