@@ -1,3 +1,5 @@
+bootfast:
+	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 1G -drive file=minix.img,format=raw,index=0,media=disk
 boot:
 	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 256 -drive file=minix.img,format=raw,index=0,media=disk
 install:
