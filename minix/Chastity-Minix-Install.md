@@ -71,3 +71,12 @@ qemu-system-x86_64 -rtc base=utc -net user -net nic -m 256 -drive file=minix.img
 The next guide from the Minix 3 website has more information on installing more things onto Minix after it is installed.
 
 <https://wiki.minix3.org/doku.php?id=usersguide:postinstallation>
+
+Minix has a package manager with scripts to install tons of packages and it lets you choose which you want during the process. The first command updates the database and the second will start the script.
+
+```
+pkgin update
+pkgin_sets
+```
+
+The sets include most things I wanted. The clang compiler can be installed
