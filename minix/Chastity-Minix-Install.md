@@ -63,6 +63,7 @@ Will turn the emulated PC off so I can exit QEMU safely.
 
 Once Minix was installed, I just booted from the hard disk image. Notice that the command is mostly the same except the ISO image for the CD is not included this time because we don't need it.
 
+# Boot From Hard Disk
 
 ```
 qemu-system-x86_64 -rtc base=utc -net user -net nic -m 256 -drive file=minix.img,format=raw,index=0,media=disk
@@ -88,3 +89,16 @@ pkgin install nano
 ```
 
 As you see, installing software from the repository is just as easy in Minix as it is in Debian.
+
+The final step I use when installing a now Minix system is to create a regular user account for myself.
+
+This page contains the details for managing user accounts.
+
+<https://wiki.minix3.org/doku.php?id=usersguide:managinguseraccounts>
+
+```
+user add -m -g users chastity
+passwd chastity
+```
+
+With all these steps, I now have a working Minix system. There are obviously more steps that I can do to customize it and turn it into my most reliable OS but I will cover most of them in a separate document.
