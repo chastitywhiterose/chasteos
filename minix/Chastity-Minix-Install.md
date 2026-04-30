@@ -80,3 +80,11 @@ pkgin_sets
 ```
 
 The sets include most things I wanted. The clang compiler can be installed as well as important things like the vim text editor.
+
+However, I like to use nano. It can be installed like this:
+
+```
+pkgin install nano
+```
+
+As you see, installing software from the repository is just as easy in Minix as it is in Debian.
