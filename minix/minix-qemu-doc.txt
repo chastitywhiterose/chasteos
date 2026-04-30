@@ -1,0 +1,37 @@
+https://wiki.minix3.org/doku.php?id=usersguide:runningonqemu
+
+Running on QEMU and KVM
+This page describes the process of installing Minix 3 on QEMU and KVM. If you run into problems, see the workarounds section at the bottom of the page for possible solutions.
+
+Preliminaries
+Please install QEMU or KVM. QEMU and KVM sources can be downloaded from their websites. If you're running a Linux distribution, you can install QEMU and KVM via the package manager.
+
+Virtual Machine Setup
+Before you install Minix, you will need to create a new virtual machine configuration. The VM configuration specifies the parameters of your Virtual machine, e.g., how much memory you want the VM to use, how big you want the virtual hard disk to be, etc.
+
+Open a terminal, change directory to where you want to create the Hard Disk Image, and write:
+
+# qemu-img create minix.img 8G
+This will create an 8 GB hard disk image named minix.img, which we will use to install the operating system.
+
+Installation
+Assuming you have downloaded and decompressed a Minix ISO image from the download page, you can mount the ISO file:
+
+# qemu -localtime -net user -net nic -m 256 -cdrom minix.iso -hda minix.img -boot d
+or
+
+# kvm -localtime -net user -net nic -m 256 -cdrom minix.iso -hda minix.img -boot d
+where minix.iso is the .iso we downloaded earlier (which is mounted as CD-ROM), minix.img is the disk image we created, and 256 is the amount of memory dedicated to the Virtual Machine. The option -boot d makes sure that we boot from the CD-ROM.
+
+With QEMU 2.0.0 the command line shall look like this:
+
+# qemu-system-x86_64 -localtime -net user -net nic -m 256 -cdrom minix.iso -hda minix.img -boot d
+Then you can follow the normal installation instructions. If you only get a blank screen or QEMU seems stuck with the “SeaBIOS” message, try adding the -sdl parameter.
+
+When the installation is over, type
+
+shutdown -h now
+to exit Minix.
+
+When you get the cd>, type off in order to shutdown the Virtual Machine.
+
