@@ -102,3 +102,31 @@ passwd chastity
 ```
 
 With all these steps, I now have a working Minix system. There are obviously more steps that I can do to customize it and turn it into my most reliable OS but I will cover most of them in a separate document.
+
+# Connect with SSH
+
+The post installation instructions tell how to install openssh and set it to automatically start on boot. However, I added the mkdir command to create /etc/rc.d/
+because it did not already exist on my system. The following series of commands worked for me.
+
+```
+pkgin update
+pkgin install openssh
+mkdir /etc/rc.d/
+cp /usr/pkg/etc/rc.d/sshd /etc/rc.d/
+printf 'sshd=YES\n' >> /etc/rc.conf
+/etc/rc.d/sshd start
+```
+
+After ssh is set up, "poweroff" to shutdown the machine because it needs to be rebooted with a different qemu command. I created a simple makefile rule for this.
+
+```
+boot-ssh:
+	qemu-system-x86_64 -rtc base=utc -net user,hostfwd=tcp::10022-:22 -net nic -m 1G -drive file=minix.img,format=raw,index=0,media=disk
+```
+
+Once Minix is booted this way, it is possible to connect to it from my Debian host OS.
+
+```
+ssh chastity@localhost -p10022
+```
+From this point, I am logged into my user account I created in Minix but I am typing commands into the terminal emulator instead of qemu. This means I can copy paste things which is extremely important for development of C and assembly programs.
