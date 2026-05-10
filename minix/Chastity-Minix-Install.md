@@ -130,3 +130,9 @@ Once Minix is booted this way, it is possible to connect to it from my Debian ho
 ssh chastity@localhost -p10022
 ```
 From this point, I am logged into my user account I created in Minix but I am typing commands into the terminal emulator instead of qemu. This means I can copy paste things which is extremely important for development of C and assembly programs.
+
+Although everything in this file works on my machine. I am still very ignorant when it comes to understanding command line arguments passed to qemu. Therefore I will continue to use this guide for using it with not only Minix but other operating systems.
+
+<https://www.qemu.org/docs/master/system/invocation.html>
+
+I have a particular interest in emulating any Unix like system which means Linux, the BSD Unix family, and of course Minix.
