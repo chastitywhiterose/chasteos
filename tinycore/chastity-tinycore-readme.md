@@ -13,3 +13,7 @@ disk:
 ```
 
 The purpose of the Tiny Core Linux experiment is to train myself on a Linux with only the command line. I will learn more and turn it into the ultimate programming OS. This could be the foundation for the ChasteOS project I have been floating around in my head.
+
+Tiny Core is small and basic enough that any PC emulator should be able to run it. I am still learning what the QEMU command line options do so that I can customize them if needed. The commands above are based on how I got Minix to boot but Tiny Core might benefit from different QEMU commands or even different PC emulators if I learn more.
+
+https://www.qemu.org/docs/master/system/invocation.html
