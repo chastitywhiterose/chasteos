@@ -17,3 +17,13 @@ The purpose of the Tiny Core Linux experiment is to train myself on a Linux with
 Tiny Core is small and basic enough that any PC emulator should be able to run it. I am still learning what the QEMU command line options do so that I can customize them if needed. The commands above are based on how I got Minix to boot but Tiny Core might benefit from different QEMU commands or even different PC emulators if I learn more.
 
 https://www.qemu.org/docs/master/system/invocation.html
+
+
+
+Command to see help on models of network cards.
+
+`qemu-system-x86_64 -net nic,model=help`
+
+Experimental command based on advice in the TinyCore book about the virtio driver for network cards. Needs more testing.
+
+`qemu-system-x86_64 -rtc base=utc -net user -net nic,model=virtio -m 1G -cdrom Core-current.iso -drive file=disk.img,format=raw,index=0,media=disk`
