@@ -1,3 +1,5 @@
+chasteos:
+	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 1G -drive file=Core-current.iso,index=2,media=cdrom -drive file=disk.img,format=raw,index=0,media=disk
 Core:
 	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 1G -cdrom Core-current.iso -drive file=disk.img,format=raw,index=0,media=disk
 TinyCore:
