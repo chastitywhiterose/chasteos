@@ -1,11 +1,10 @@
-chasteos:
-	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 1G -drive file=Core-current.iso,index=2,media=cdrom -drive file=disk.img,format=raw,index=0,media=disk
-Core:
-	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 1G -cdrom Core-current.iso -drive file=disk.img,format=raw,index=0,media=disk
-TinyCore:
-	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 1G -cdrom TinyCore-current.iso -drive file=disk.img,format=raw,index=0,media=disk
-CorePlus:
-	qemu-system-x86_64 -rtc base=utc -net user -net nic -m 1G -cdrom CorePlus-current.iso -drive file=disk.img,format=raw,index=0,media=disk
-
-disk:
-	qemu-img create disk.img 1G
+Core-harddisk:
+	qemu-system-x86_64 -drive file=harddisk.img,format=raw,media=disk
+Core-cdrom:
+	qemu-system-x86_64 -drive file=Core-current.iso,media=cdrom
+Core-cdrom-short:
+	qemu-system-x86_64 -cdrom Core-current.iso
+Core-cdrom_and_harddisk:
+	qemu-system-x86_64 -drive file=Core-current.iso,media=cdrom -drive file=harddisk.img,format=raw,media=disk
+harddisk:
+	qemu-img create harddisk.img 1G
