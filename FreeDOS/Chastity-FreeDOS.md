@@ -45,3 +45,15 @@ Unmount the floppy (BEFORE USING IT IN QEMU)
 ```
 sudo umount floppy
 ```
+
+The main reason I wanted to transfer files to FreeDOS was to get the DOS version of FASM running on FreeDOS.
+
+Because FASM is a 32-bit DOS program that requires extended memory. I have also included cwsdpmi on the floppy because it has worked for me under DOSBox already so well.
+
+The following command must be run after boot, preferably automatically if possible.
+
+```
+cwsdpmi -p
+```
+
+Then FASM will work fine.
