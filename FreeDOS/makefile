@@ -5,9 +5,9 @@ Core-cdrom:
 Core-cdrom_and_harddisk:
 	qemu-system-x86_64 -m 1G -drive file=FD14LIVE.iso,media=cdrom -drive file=harddisk.img,format=raw,media=disk
 dos-floppy:
-	qemu-system-x86_64 -m 1G -drive file=x86BOOT.img,format=raw,index=0,if=floppy
+	qemu-system-x86_64 -m 1G -drive file=floppy.img,format=raw,index=0,if=floppy
 dos-floppy_and_harddisk:
-	qemu-system-x86_64 -m 1G -drive file=x86BOOT.img,format=raw,index=0,if=floppy -drive file=harddisk.img,format=raw,media=disk
+	qemu-system-x86_64 -m 1G -drive file=floppy.img,format=raw,index=0,if=floppy -drive file=harddisk.img,format=raw,media=disk
 dos-floppy-short:
 	qemu-system-x86_64 -fda x86BOOT.img
 Core-cdrom-short:
