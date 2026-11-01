@@ -39,7 +39,7 @@ id
 
 Usually the uid result is 1000.
 
-# Mount the floppy on Linux
+## Mount the floppy on Linux
 
 ```
 mkdir floppy
