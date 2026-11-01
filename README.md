@@ -1,11 +1,7 @@
 # Chaste OS
 
-Chastity's attempt at an operating system based on Linux From Scratch
+This repository is full of reminders for Chastity on how to build or install a working Operating System for programming based on lightweight systems like Linux, FreeDOS, or FreeBSD.
 
-Not much is here at the moment. See the official website for LFS to build your own Linux.
+The ultimate goal is to have a system that is operated entirely from the keyboard just like it is the 1980s. Chastity grew up on DOS and then moved to Linux.
 
-## Linux from Scratch
-
-<https://www.linuxfromscratch.org/>
-
-I am still deciding in what way I will build my Linux distro.
+QEMU is good at emulating old operating systems and so most of the files are lists of commands to install Chastity's favorite operating systems.
