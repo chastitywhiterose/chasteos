@@ -1,0 +1,18 @@
+The following text is for the DOSBox configuration file. It mounts my DOS tools and my current work folder where I develop new DOS programs.
+
+On my system, the config for original DOSBox is here:
+
+/home/chastity/.dosbox/
+
+And the one for DOSBox-X is here:
+
+/home/chastity/.var/app/com.dosbox_x.DOSBox-X/config/dosbox-x
+
+[autoexec]
+# Lines in this section will be run at startup.
+# You can put your MOUNT lines here.
+
+mount c ~/.dos
+mount d ~/git/Chastity-Code-Cookbook/work/
+PATH=Z:\;C:\
+cwsdpmi -p
